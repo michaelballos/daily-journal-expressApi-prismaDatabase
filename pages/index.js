@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import SideNav from '../components/SideNav'
-
+import Shell from '../components/Shell'
 const Home = () => {
   return (
     <div className={styles.container}>
@@ -10,7 +10,7 @@ const Home = () => {
         <meta name='description' content='A Personal Productivity Journal' />
       </Head>
       <main>
-        <SideNav />
+        <Shell />
       </main>
     </div>
   )

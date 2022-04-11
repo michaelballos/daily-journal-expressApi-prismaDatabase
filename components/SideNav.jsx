@@ -1,14 +1,20 @@
 import { useState, useCallback } from 'react'
-import { Drawer, Group, Burger, Stack } from '@mantine/core'
+import {
+  Drawer,
+  useMantineTheme,
+  Group,
+  Burger,
+  Stack,
+  MediaQuery,
+  Aside,
+} from '@mantine/core'
 
-const SideNav = () => {
-  const [opened, setOpened] = useState(false)
+const SideNav = ({ opened, setOpened, handleClick }) => {
   const title = opened ? 'Close Navigation' : 'Open Navigation'
-
+  const [opened, setOpened] = useState(false)
   const handleClick = useCallback(() => {
     setOpened(!opened)
   }, [opened])
-
   return (
     <>
       <Drawer
@@ -20,9 +26,13 @@ const SideNav = () => {
       >
         <Stack></Stack>
       </Drawer>
-      <Group position='center'>
-        <Burger opened={opened} title={title} onClick={handleClick} />
-      </Group>
+      <Burger
+        size='sm'
+        mr='xl'
+        opened={opened}
+        title={title}
+        onClick={handleClick}
+      />
     </>
   )
 }

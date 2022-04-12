@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { Drawer, Burger, Stack } from '@mantine/core'
+import SideNavContent from './SideNavContent'
 
 const SideNav = () => {
   const [opened, setOpened] = useState(false)
@@ -17,7 +18,9 @@ const SideNav = () => {
         padding='xl'
         size='xl'
       >
-        <Stack></Stack>
+        <Stack>
+          <SideNavContent />
+        </Stack>
       </Drawer>
       <Burger
         size='sm'

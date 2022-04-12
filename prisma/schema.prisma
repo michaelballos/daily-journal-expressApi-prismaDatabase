@@ -11,10 +11,28 @@ datasource db {
 }
 
 model User {
-  id String @id @default(cuid())
+  id Int @id @default(autoincrement())
   firstName String
   lastName String
   email String
-  password String
   avatar String
+  journalEntry JournalEntry[] 
+  todos Todo[]
 }
+
+model JournalEntry {
+  id Int @id @default(autoincrement())
+  title String
+  content String
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Todo {
+  id Int @id @default(autoincrement())
+  title String
+  content String
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+}
+

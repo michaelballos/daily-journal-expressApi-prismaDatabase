@@ -22,3 +22,9 @@ model User {
   name  String?
   posts Post[]
 }
+
+model feedback {
+  id String @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

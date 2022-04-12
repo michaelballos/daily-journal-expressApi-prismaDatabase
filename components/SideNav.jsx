@@ -1,20 +1,13 @@
 import { useState, useCallback } from 'react'
-import {
-  Drawer,
-  useMantineTheme,
-  Group,
-  Burger,
-  Stack,
-  MediaQuery,
-  Aside,
-} from '@mantine/core'
+import { Drawer, Burger, Stack } from '@mantine/core'
 
-const SideNav = ({ opened, setOpened, handleClick }) => {
-  const title = opened ? 'Close Navigation' : 'Open Navigation'
+const SideNav = () => {
   const [opened, setOpened] = useState(false)
+  const title = opened ? 'Close Navigation' : 'Open Navigation'
   const handleClick = useCallback(() => {
     setOpened(!opened)
   }, [opened])
+
   return (
     <>
       <Drawer

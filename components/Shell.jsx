@@ -1,14 +1,11 @@
 import React, { useState, useCallback } from 'react'
 import {
+  Button,
   AppShell,
-  Navbar,
   useMantineTheme,
   Header,
   Footer,
-  Aside,
   Text,
-  MediaQuery,
-  Burger,
 } from '@mantine/core'
 import SideNav from './SideNav'
 
@@ -35,9 +32,7 @@ const Shell = () => {
       }
       header={
         <Header height={50} p='md'>
-          <div
-            style={{ display: 'flex', alignItems: 'center', height: '100%' }}
-          >
+          <div>
             <SideNav />
             <Text>Application header</Text>
           </div>

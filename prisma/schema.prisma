@@ -6,14 +6,15 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = "fiel:./dev.db" 
+  provider = "sqlite"
+  url      = "file:./dev.db" 
 }
 
 model User {
-  id          Int @id @default(autoincrement())
-  firstName   String
-  lastName    String
-  email       String
-  password    String
+  id String @id @default(cuid())
+  firstName String
+  lastName String
+  email String
+  password String
+  avatar String
 }

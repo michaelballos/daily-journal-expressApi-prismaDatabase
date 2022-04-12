@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import {
+  Group,
   Button,
   AppShell,
   useMantineTheme,
@@ -32,10 +33,10 @@ const Shell = () => {
       }
       header={
         <Header height={50} p='md'>
-          <div>
+          <Group>
             <SideNav />
             <Text>Application header</Text>
-          </div>
+          </Group>
         </Header>
       }
     >

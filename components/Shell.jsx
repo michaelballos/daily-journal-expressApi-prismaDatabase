@@ -9,6 +9,7 @@ import {
   Text,
 } from '@mantine/core'
 import SideNav from './SideNav'
+import { PrismaClient } from '@prisma/client'
 
 const Shell = () => {
   const theme = useMantineTheme()

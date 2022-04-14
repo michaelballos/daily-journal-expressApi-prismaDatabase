@@ -14,9 +14,9 @@ const SideNav = () => {
       <Drawer
         opened={opened}
         onClose={() => setOpened(false)}
-        title='Register'
+        title='Navigation'
         padding='xl'
-        size='xl'
+        size='sm'
       >
         <Stack>
           <SideNavContent />

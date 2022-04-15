@@ -8,6 +8,7 @@ import {
 } from '@mantine/core'
 import '../styles/globals.css'
 import SideNav from '../components/SideNav.jsx'
+import HeaderLinks from '../components/HeaderLinks.jsx'
 
 function MyApp({ Component, pageProps }) {
   const theme = useMantineTheme()
@@ -34,7 +35,7 @@ function MyApp({ Component, pageProps }) {
         <Header height={50} p='md'>
           <Group>
             <SideNav />
-            <Text>Application header</Text>
+            <HeaderLinks />
           </Group>
         </Header>
       }

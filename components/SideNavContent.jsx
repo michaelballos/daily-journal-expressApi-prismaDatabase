@@ -6,9 +6,8 @@ const SideNavContent = () => {
   return (
     <>
       <Stack>
-        <Link href='/login'>Login</Link>
+      
         <Link href='/journal'>Journal</Link>
-        <Link href='/register'>Register</Link>
         <Link href='/projects'>Projects</Link>
       </Stack>
     </>

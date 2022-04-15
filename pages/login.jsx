@@ -1,13 +1,16 @@
 import { 
+  Text,
+  Card,
   Stack,
   Group,
   Button,
   Input
 } from '@mantine/core'
+import Link from 'next/link'
 
 const Login = () => {
   return (
-    <div
+    <Card
       style={{
         height: '100%',
         width: '100%',
@@ -20,25 +23,33 @@ const Login = () => {
       align='center' 
       justify='center'
     >
+      <Text>
+        Login
+      </Text>
       <Input
         style={{
           width: '25vw',
-          padding: '.25rem',
+          padding: '.1rem',
         }}
         placeholder='Email'
       />
       <Input
         style={{
           width: '25vw',
-          padding: '.25rem',
+          padding: '.1rem',
         }}
         placeholder='Password'
       />
-      <Group position='center' spacing={'sm'}>
+      <Group
+        position='center'
+        spacing={'sm'}>
         <Button
           variant='subtle'
         >
+          <Link
+            href='/register'>
           Register
+          </Link>
         </Button>
         <Button
           variant='subtle'
@@ -47,7 +58,7 @@ const Login = () => {
         </Button>
       </Group>
     </Stack>
-    </div>
+    </Card>
   )
 }
 

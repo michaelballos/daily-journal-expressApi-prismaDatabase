@@ -1,14 +1,17 @@
 import { Stack } from '@mantine/core'
 import Link from 'next/link'
+import SideNav from './SideNav'
 
 const SideNavContent = () => {
   return (
-    <Stack>
-      <Link href='/login'>Login</Link>
-      <Link href='/journal'>Journal</Link>
-      <Link href='/register'>Register</Link>
-      <Link href='/projects'>Projects</Link>
-    </Stack>
+    <>
+      <Stack>
+        <Link href='/login'>Login</Link>
+        <Link href='/journal'>Journal</Link>
+        <Link href='/register'>Register</Link>
+        <Link href='/projects'>Projects</Link>
+      </Stack>
+    </>
   )
 }
 

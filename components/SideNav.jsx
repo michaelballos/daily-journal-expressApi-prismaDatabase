@@ -1,5 +1,12 @@
-import { useState, useCallback } from 'react'
-import { Drawer, Burger, Stack } from '@mantine/core'
+import { 
+  useState,
+  useCallback
+} from 'react'
+import {
+  Drawer,
+  Burger,
+  Stack
+} from '@mantine/core'
 import SideNavContent from './SideNavContent'
 
 const SideNav = () => {
@@ -19,7 +26,11 @@ const SideNav = () => {
         size='sm'
       >
         <Stack>
-          <SideNavContent />
+          <SideNavContent
+           opened={opened}
+           setOpened={setOpened}
+
+          />
         </Stack>
       </Drawer>
       <Burger

@@ -1,16 +1,13 @@
-import { Request, Response } from 'express'
+import express, { Response, Request } from 'express'
 
-const express = require('express')
 const app = express()
+const port = 3000
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('login')
+app.get('/users', (req: Request, res: Response) => {
+  // Authenticate the user
+  res.send('users!')
 })
 
-app.post('/register', (req: Request, res: Response) => {
-  return res.send('register')
-})
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000')
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
 })

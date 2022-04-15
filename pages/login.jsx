@@ -1,4 +1,5 @@
 import { 
+  PasswordInput,
   Text,
   Card,
   Stack,
@@ -33,7 +34,7 @@ const Login = () => {
         }}
         placeholder='Email'
       />
-      <Input
+      <PasswordInput
         style={{
           width: '25vw',
           padding: '.1rem',

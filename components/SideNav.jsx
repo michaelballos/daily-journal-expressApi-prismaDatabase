@@ -29,7 +29,7 @@ const SideNav = () => {
           <SideNavContent
            opened={opened}
            setOpened={setOpened}
-
+           
           />
         </Stack>
       </Drawer>

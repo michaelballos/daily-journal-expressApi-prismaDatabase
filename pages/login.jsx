@@ -9,9 +9,10 @@ import {
 } from '@mantine/core'
 import Link from 'next/link'
 import { useMutation } from 'react-query'
+
 const Login = () => {
  
-
+  
   return (
     <Card
       style={{

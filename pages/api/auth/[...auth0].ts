@@ -73,7 +73,7 @@ const afterCallback = async (
   return session;
 }
 
-export default handleAuth({
+export default  handleAuth({
   async callback(req, res) {
     try {
     await handleCallback(req, res, { afterCallback });

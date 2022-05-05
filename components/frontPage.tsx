@@ -1,6 +1,17 @@
-import React from 'react';
-import { createStyles, Title, SimpleGrid, Text, Button, ThemeIcon, Grid, Col } from '@mantine/core';
-import { ReceiptOff, Flame, CircleDotted, FileCode } from 'tabler-icons-react';
+import React from 'react'
+import {
+  createStyles,
+  Title,
+  SimpleGrid,
+  Text,
+  Button,
+  ThemeIcon,
+  Grid,
+  Col,
+} from '@mantine/core'
+import { ReceiptOff, Flame, CircleDotted, FileCode } from 'tabler-icons-react'
+import { useUser } from '@auth0/nextjs-auth0';
+import { useRouter } from 'next/router';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -15,18 +26,19 @@ const useStyles = createStyles((theme) => ({
     marginBottom: theme.spacing.md,
     color: theme.colorScheme === 'dark' ? theme.white : theme.black,
   },
-}));
+}))
 
 const features = [
   {
     icon: ReceiptOff,
     title: 'No Bullshit',
-    description: 'A Completely free productivity app. No ads, no tracking, and future continous updates. The best productivity app.',
+    description:
+      'A Completely free productivity app. No ads, no tracking, and future continous updates. The best productivity app.',
   },
   {
     icon: FileCode,
-    title: 'Journal And Notes',
-    description: 'Write down your thoughts and feelings. No need to worry about forgetting.',
+    title: 'Journaling',
+    description: 'Write down your thoughts and feelings.',
   },
   {
     icon: CircleDotted,
@@ -40,29 +52,44 @@ const features = [
     description:
       'More than just a productivity app. Extra added features and open to suggestions.',
   },
-];
+]
+
+
 
 export default function FrontPage() {
-  const { classes } = useStyles();
-
+  const { classes } = useStyles()
   const items = features.map((feature) => (
     <div key={feature.title}>
       <ThemeIcon
         size={44}
-        radius="md"
-        variant="gradient"
+        radius='md'
+        variant='gradient'
         gradient={{ deg: 133, from: 'blue', to: 'cyan' }}
       >
         <feature.icon size={26} />
       </ThemeIcon>
-      <Text size="lg" mt="sm" weight={500}>
+      <Text size='lg' mt='sm' weight={500}>
         {feature.title}
       </Text>
-      <Text color="dimmed" size="sm">
+      <Text color='dimmed' size='sm'>
         {feature.description}
       </Text>
     </div>
-  ));
+  ))
+  const { user } = useUser();
+
+  const sessionButton = () => {
+    const router = useRouter();
+    if (!user) {
+      return (
+        <a href="/api/auth/login">
+          Get started by creating a new account
+        </a>
+        )
+    } else if (user) {
+      router.push('/home')
+    }
+  }
 
   return (
     <div className={classes.wrapper}>
@@ -71,28 +98,28 @@ export default function FrontPage() {
           <Title className={classes.title} order={2}>
             Get Shit Done
           </Title>
-          <Text color="dimmed">
-
-          </Text>
-
+          <Text color='dimmed'></Text>
           <Button
-            variant="gradient"
+            variant='gradient'
             gradient={{ deg: 133, from: 'blue', to: 'cyan' }}
-            size="lg"
-            radius="md"
-            mt="xl"
+            size='lg'
+            radius='md'
+            mt='xl'
           >
-            <a href='/api/auth/login'>
-              Get started by creating a new account
-            </a>
+           {sessionButton()} 
           </Button>
         </Col>
         <Col span={12} md={7}>
-          <SimpleGrid cols={2} spacing={30} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
+          <SimpleGrid
+            cols={2}
+            spacing={30}
+            breakpoints={[{ maxWidth: 'md', cols: 1 }]}
+          >
             {items}
           </SimpleGrid>
         </Col>
       </Grid>
     </div>
-  );
+  )
 }
+

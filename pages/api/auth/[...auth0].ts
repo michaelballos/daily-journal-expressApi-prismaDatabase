@@ -74,7 +74,7 @@ const afterCallback = async (
 }
 
 export default handleAuth({
-  async callback(req: NextApiRequest, res: NextApiResponse) {
+  async callback(req, res) {
     try {
     await handleCallback(req, res, { afterCallback });
   } catch (error: any) {

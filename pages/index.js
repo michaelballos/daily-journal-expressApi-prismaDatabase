@@ -6,7 +6,7 @@ const Home = () => {
     <div className={styles.container}>
       <Head>
         <title>Productivity Journal</title>
-        <meta name='description' content='A Personal Productivity Journal' />
+        <meta name='description' content='A Personal Productivity App' />
       </Head>
     </div>
   )

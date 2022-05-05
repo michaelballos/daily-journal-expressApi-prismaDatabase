@@ -1,4 +1,4 @@
-import FrontPage from '../components/frontPage'
+import FrontPage from '../components/FrontPage'
 import { createStyles } from '@mantine/core';
 
 const useStyles = createStyles((theme) => ({

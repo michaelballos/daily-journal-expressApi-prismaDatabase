@@ -20,7 +20,7 @@ const Login = () => {
         justifyContent: 'center',
       }}
     >
-      <Stack align='center' justify='center'>
+     <Stack align='center' justify='center'>
         <Text>Login</Text>
         <Input
           style={{

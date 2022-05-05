@@ -1,13 +1,21 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import FrontPage from '../components/frontPage'
+import { createStyles } from '@mantine/core';
+
+const useStyles = createStyles((theme) => ({
+  pageContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%'
+  },
+}));
 
 const Home = () => {
+  const { classes } = useStyles();
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Productivity Journal</title>
-        <meta name='description' content='A Personal Productivity App' />
-      </Head>
+    <div className={classes.pageContainer}>
+      <FrontPage />
     </div>
   )
 }

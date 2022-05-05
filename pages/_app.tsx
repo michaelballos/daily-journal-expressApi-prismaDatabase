@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import {
   Group,
   AppShell,
@@ -14,6 +15,10 @@ function MyApp({ Component, pageProps }) {
   const theme = useMantineTheme()
   return (
     <UserProvider>
+      <Head>
+        <title>Productivity Journal</title>
+        <meta name='description' content='A Personal Productivity App' />
+      </Head>
     <AppShell
       styles={{
         main: {

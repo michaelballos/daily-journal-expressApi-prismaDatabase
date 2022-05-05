@@ -20,29 +20,29 @@ const useStyles = createStyles((theme) => ({
 const features = [
   {
     icon: ReceiptOff,
-    title: 'Get shit done',
+    title: 'No Bullshit',
     description: 'A Completely free productivity app. No ads, no tracking, and future continous updates. The best productivity app.',
   },
   {
     icon: FileCode,
-    title: 'Journal and notes',
+    title: 'Journal And Notes',
     description: 'Write down your thoughts and feelings. No need to worry about forgetting.',
   },
   {
     icon: CircleDotted,
-    title: 'Fast and simple',
+    title: 'Fast And Simple',
     description:
       'The app is designed to be fast and simple. No need to worry about the app being slow or complicated.',
   },
   {
     icon: Flame,
-    title: 'The coolest daily app',
+    title: 'The Coolest Daily App',
     description:
-      'More than just a productivity app. Extra added features.',
+      'More than just a productivity app. Extra added features and open to suggestions.',
   },
 ];
 
-export function FeaturesTitle() {
+export default function FrontPage() {
   const { classes } = useStyles();
 
   const items = features.map((feature) => (
@@ -82,7 +82,9 @@ export function FeaturesTitle() {
             radius="md"
             mt="xl"
           >
-            Get started
+            <a href='/api/auth/login'>
+              Get started by creating a new account
+            </a>
           </Button>
         </Col>
         <Col span={12} md={7}>

@@ -1,5 +1,6 @@
-const Projects = () => {
+import { withPageAuthRequired } from "@auth0/nextjs-auth0"
+export default function Projects () {
   return <p>this is projexts</p>
 }
 
-export default Projects
+export const getServerSideProps = withPageAuthRequired();

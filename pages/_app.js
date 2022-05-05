@@ -9,11 +9,13 @@ import {
 import '../styles/globals.css'
 import SideNav from '../components/SideNav.jsx'
 import HeaderLinks from '../components/HeaderLinks.jsx'
+import { UserProvider } from '@auth0/nextjs-auth0';
 
 function MyApp({ Component, pageProps }) {
   const theme = useMantineTheme()
 
   return (
+    <UserProvider>
     <AppShell
       styles={{
         main: {
@@ -42,6 +44,7 @@ function MyApp({ Component, pageProps }) {
     >
       <Component {...pageProps} />
     </AppShell>
+    </UserProvider>
   )
 }
 

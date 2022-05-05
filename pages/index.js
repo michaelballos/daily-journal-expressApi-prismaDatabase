@@ -1,9 +1,5 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Journal from './journal'
-import Todo from './todo'
-import Login from './login'
-import Register from './register'
 
 const Home = () => {
   return (

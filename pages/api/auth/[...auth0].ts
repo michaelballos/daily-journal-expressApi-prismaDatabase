@@ -1,6 +1,6 @@
 import { handleAuth, handleCallback } from '@auth0/nextjs-auth0';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, User } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -31,43 +31,43 @@ const afterCallback = async (
     } = session
     await prisma.user.upsert({
       where: {
-        email: email,
-      },
-      create: {
-        firstName: firstName,
-        lastName: lastName,
-        nickname: nickname,
-        fullName: fullName,
-        picture: picture,
-        locale: locale,
-        updatedAt: updatedAt,
-        email: email,
-        emailVerified: emailVerified,
-        sub: sub,
-        idToken: idToken,
-        accessToken: accessToken,
-        accessTokenScope: accessTokenScope,
-        accessTokenExpiresAt: accessTokenExpiresAt,
-        refreshToken: refreshToken,
-        tokenType: tokenType,
+        email,
       },
       update: {
-        firstName: firstName,
-        lastName: lastName,
-        nickname: nickname,
-        fullName: fullName,
-        picture: picture,
-        locale: locale,
-        updatedAt: updatedAt,
-        email: email,
-        emailVerified: emailVerified,
-        sub: sub,
-        idToken: idToken,
-        accessToken: accessToken,
-        accessTokenScope: accessTokenScope,
-        accessTokenExpiresAt: accessTokenExpiresAt,
-        refreshToken: refreshToken,
-        tokenType: tokenType,
+        firstName,
+        lastName,
+        nickname,
+        fullName,
+        picture,
+        locale,
+        updatedAt,
+        email,
+        emailVerified,
+        sub,
+        idToken, 
+        accessToken,
+        accessTokenScope,
+        accessTokenExpiresAt,
+        refreshToken,
+        tokenType,
+      },
+      create: {
+        firstName,
+        lastName,
+        nickname,
+        fullName,
+        picture,
+        locale,
+        updatedAt,
+        email,
+        emailVerified,
+        sub,
+        idToken,
+        accessToken,
+        accessTokenScope,
+        accessTokenExpiresAt,
+        refreshToken,
+        tokenType,
       },
     })
   return session;
